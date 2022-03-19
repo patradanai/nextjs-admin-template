@@ -4,7 +4,8 @@ import { useRecoilState } from 'recoil'
 import { sidebarState } from '@stores/sidebar'
 import { ViewList } from '@components/icons'
 import { Calendar, Duplicate, ClipBoard, Graph, Chat, Document, Gift, Download, Setting } from '@components/icons'
-import { ListMenu } from './components/list-menu'
+import ListMenu from './components/list-menu'
+import ListMenuDropDown from './components/list-menu-dropdown'
 
 export const Sidebar: NextPage = () => {
   const [isOpen, setOpen] = useRecoilState(sidebarState)
@@ -37,24 +38,25 @@ export const Sidebar: NextPage = () => {
         {/* List */}
         <div className='my-5'>
           <ul>
-            <ListMenu icons={<Graph className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenu icons={<Calendar className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenu icons={<Duplicate className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenu icons={<ClipBoard className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Graph className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Calendar className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Duplicate className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<ClipBoard className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenuDropDown icons={<ClipBoard className='w-6 h-6' />} name='สถิติการใช้งาน' status={true}/>
 
             <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-5'>
               {isOpen ? <p className='text-sm'>SETTINGS</p> : <p className='tracking-[0.1em] text-center animate-fade'>...</p>}
             </li>
-            <ListMenu icons={<Setting className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenu icons={<Gift className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Setting className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Gift className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
 
             <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-5'>
               {isOpen ? <p className='text-sm'>DOCUMENTS</p> : <p className='tracking-[0.1em] animate-fade text-center'>...</p>}
             </li>
-            <ListMenu icons={<Chat className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenu icons={<Document className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenu icons={<Download className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenu icons={<Download className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Chat className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Document className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Download className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Download className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
           </ul>
         </div>
       </div>
