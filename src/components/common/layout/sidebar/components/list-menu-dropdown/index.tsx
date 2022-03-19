@@ -15,7 +15,7 @@ const ListMenuDropDown: FC<IListMenuDropDown> = ({ icons, name, status }) => {
   return (
     <div>
       <li
-        className={`flex flex-row items-center group ${status ? 'w-[260px]' : 'w-[78px]'} h-[44px] hover:bg-[#475fd2]`}
+        className={`flex flex-col items-center group ${status ? 'w-[260px]' : 'w-[78px]'} min-h-[44px] hover:bg-[#475fd2]`}
       >
         {/* Header Menu */}
         <a className='w-full flex flex-row items-center cursor-pointer px-[27px]' onClick={handleDropdown}>
@@ -33,11 +33,11 @@ const ListMenuDropDown: FC<IListMenuDropDown> = ({ icons, name, status }) => {
         </a>
         {/* List Dropdown */}
         <div className={`${isDropdown ? '' : ''}`}>
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+          <ul className=''>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
           </ul>
         </div>
       </li>
