@@ -1,11 +1,13 @@
+import React from 'react'
 import { NextPage } from 'next'
+import { useRecoilState } from 'recoil'
+import { sidebarState } from '@stores/sidebar'
 import { ViewList } from '@components/icons'
-import React, { useState } from 'react'
 import { Calendar, Duplicate, ClipBoard, Graph, Chat, Document, Gift, Download, Setting } from '@components/icons'
 import { ListMenu } from './components/list-menu'
 
 export const Sidebar: NextPage = () => {
-  const [isOpen, setOpen] = useState<boolean>(false)
+  const [isOpen, setOpen] = useRecoilState(sidebarState)
 
   const handleOpen = () => {
     setOpen((val) => !val)
@@ -15,38 +17,46 @@ export const Sidebar: NextPage = () => {
     <aside
       onMouseEnter={handleOpen}
       onMouseLeave={handleOpen}
-      className={`fixed inset-0 h-full overflow-y-auto motion-reduce:transition-none transition-all ease-in-out delay-150 bg-primary ${
-        isOpen ? 'w-[260px]' : 'w-[66px]'
+      className={`fixed inset-0 h-full motion-reduce:transition-none transition-all ease-in-out delay-150 bg-primary ${
+        isOpen ? 'w-[260px] overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-info scrollbar-thumb-rounded-full' : 'w-[78px]'
       }`}
     >
       <div className='overflow-hidden'>
         {/* Header Company */}
-        <div className='py-2 flex flex-row justify-between'>
-          <div>
-            <a className='cursor-pointer'>asdasdas</a>
-          </div>
+        <div className='px-[25px] h-[78px] flex flex-row items-center justify-between'>
+          {isOpen ? (
+            <div>
+              <a className='cursor-pointer'>asdasdas</a>
+            </div>
+          ) : null}
           <div>
             <ViewList className='w-8 h-8 text-white' />
           </div>
         </div>
 
         {/* List */}
-        <ul className='space-y-3'>
-          <ListMenu icons={<Graph className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          <ListMenu icons={<Calendar className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          <ListMenu icons={<Duplicate className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          <ListMenu icons={<ClipBoard className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
+        <div className='my-5'>
+          <ul>
+            <ListMenu icons={<Graph className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Calendar className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Duplicate className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<ClipBoard className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
 
-          <li>SETTINGS</li>
-          <ListMenu icons={<Setting className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          <ListMenu icons={<Gift className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          
-          <li>DOCUMENTS</li>
-          <ListMenu icons={<Chat className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          <ListMenu icons={<Document className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          <ListMenu icons={<Download className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-          <ListMenu icons={<Download className='w-6 h-6 text-white' />} name='สถิติการใช้งาน' status={isOpen} />
-        </ul>
+            <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-10'>
+              {isOpen ? <h4>SETTINGS</h4> : <p className='tracking-[0.1em] text-center'>...</p>}
+            </li>
+            <ListMenu icons={<Setting className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Gift className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+
+            <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-10'>
+              {isOpen ? <h4>DOCUMENTS</h4> : <p className='tracking-[0.1em] text-center'>...</p>}
+            </li>
+            <ListMenu icons={<Chat className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Document className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Download className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+            <ListMenu icons={<Download className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
+          </ul>
+        </div>
       </div>
     </aside>
   )

@@ -26,5 +26,8 @@ module.exports = {
       dark: '#343a40'
     }
   },
-  plugins: []
+  plugins: [require('tailwind-scrollbar')],
+  variants: {
+    scrollbar: ['rounded']
+  }
 }
