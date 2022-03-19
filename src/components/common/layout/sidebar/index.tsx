@@ -42,14 +42,14 @@ export const Sidebar: NextPage = () => {
             <ListMenu icons={<Duplicate className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
             <ListMenu icons={<ClipBoard className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
 
-            <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-10'>
-              {isOpen ? <h4>SETTINGS</h4> : <p className='tracking-[0.1em] text-center'>...</p>}
+            <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-5'>
+              {isOpen ? <p className='text-sm'>SETTINGS</p> : <p className='tracking-[0.1em] text-center animate-fade'>...</p>}
             </li>
             <ListMenu icons={<Setting className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
             <ListMenu icons={<Gift className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
 
-            <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-10'>
-              {isOpen ? <h4>DOCUMENTS</h4> : <p className='tracking-[0.1em] text-center'>...</p>}
+            <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-5'>
+              {isOpen ? <p className='text-sm'>DOCUMENTS</p> : <p className='tracking-[0.1em] animate-fade text-center'>...</p>}
             </li>
             <ListMenu icons={<Chat className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
             <ListMenu icons={<Document className='w-6 h-6 text-[#bcc8ff]' />} name='สถิติการใช้งาน' status={isOpen} />
