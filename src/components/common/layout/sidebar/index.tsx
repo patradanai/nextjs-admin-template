@@ -42,7 +42,7 @@ export const Sidebar: NextPage = () => {
             <ListMenu icons={<Calendar className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
             <ListMenu icons={<Duplicate className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
             <ListMenu icons={<ClipBoard className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen} />
-            <ListMenuDropDown icons={<ClipBoard className='w-6 h-6' />} name='สถิติการใช้งาน' status={true}/>
+            <ListMenuDropDown icons={<ClipBoard className='w-6 h-6' />} name='สถิติการใช้งาน' status={isOpen}/>
 
             <li className='px-[27px] h-[44px] text-[#bcc8ff] mt-5'>
               {isOpen ? <p className='text-sm'>SETTINGS</p> : <p className='tracking-[0.1em] text-center animate-fade'>...</p>}
