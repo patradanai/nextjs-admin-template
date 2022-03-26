@@ -24,7 +24,7 @@ export const Sidebar: NextPage = () => {
     <aside
       onMouseEnter={handleOpen}
       onMouseLeave={handleOpen}
-      className={`fixed inset-0 h-full motion-reduce:transition-none transition-all ease-in-out delay-150 bg-primary ${
+      className={`fixed inset-0 h-full z-20 motion-reduce:transition-none transition-all ease-in-out delay-150 bg-primary ${
         isOpen.isLock || isOpen.sidebar
           ? 'w-[260px] overflow-y-auto scrollbar scrollbar-thin scrollbar-thumb-info scrollbar-thumb-rounded-full'
           : 'w-[78px]'

@@ -4,6 +4,7 @@ import { NextPage } from 'next'
 import { sidebarState } from '@stores/sidebar'
 import { Sidebar } from './sidebar'
 import { Navbar } from './navbar'
+import { NavbarListMenu } from './navbar-list-menu'
 import { Footer } from './footer'
 
 export const Container: NextPage = ({ children }) => {
@@ -14,7 +15,14 @@ export const Container: NextPage = ({ children }) => {
       <div className='flex flex-row mb-auto h-full w-full'>
         <Sidebar />
         <div className={`pt-[75px] w-full h-full`}>
-          <div className={`${sidebar.isLock ? 'pl-[260px]' : 'pl-[78px]'} w-full h-full`}>{children}</div>
+          <div
+            className={`${
+              sidebar.isLock ? 'pl-[260px]' : 'pl-[78px]'
+            } transition-all ease-in-out duration-500 w-full h-full`}
+          >
+            <NavbarListMenu isOpen={sidebar.isLock} componentLeft={<div>WTF</div>} componentRight={<div>MAN</div>} />
+            {children}
+          </div>
         </div>
       </div>
       <Footer />
