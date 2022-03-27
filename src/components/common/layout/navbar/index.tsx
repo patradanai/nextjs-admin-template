@@ -8,7 +8,7 @@ interface INavbar {
 
 export const Navbar: NextPage<INavbar> = ({ isOpen }) => {
   return (
-    <nav className={`fixed inset-0 ${isOpen ? 'left-[260px]' : 'left-[78px]'} transition-all ease-in-out duration-500`}>
+    <nav className={`fixed inset-0 ${isOpen ? 'pl-[260px]' : 'pl-[78px]'} transition-all ease-in-out duration-500`}>
       <div className='flex flex-row justify-between items-center bg-white h-[75px]  border-b-[1px] border-b-secondary'>
         {/* Agent Name */}
         <div className='h-10 ml-6 p-3 bg-[#f0f3ff] text-primary  text-sm rounded'>DooDeeConstruction</div>

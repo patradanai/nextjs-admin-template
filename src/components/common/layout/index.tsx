@@ -10,7 +10,7 @@ import { Footer } from './footer'
 export const Container: NextPage = ({ children }) => {
   const sidebar = useRecoilValue(sidebarState)
   return (
-    <div className='flex flex-col w-full h-screen justify-between bg-[#F2F3F8] box-border'>
+    <div className='flex flex-col w-full min-h-screen justify-between bg-[#F2F3F8] box-border'>
       <Navbar isOpen={sidebar.isLock} />
       <div className='flex flex-row mb-auto h-full w-full'>
         <Sidebar />
@@ -20,8 +20,10 @@ export const Container: NextPage = ({ children }) => {
               sidebar.isLock ? 'pl-[260px]' : 'pl-[78px]'
             } transition-all ease-in-out duration-500 w-full h-full`}
           >
-            <NavbarListMenu isOpen={sidebar.isLock} componentLeft={<div>WTF</div>} componentRight={<div>MAN</div>} />
-            {children}
+            <div className='relative w-full h-full'>
+              <NavbarListMenu isOpen={sidebar.isLock} componentLeft={<div>WTF</div>} componentRight={<div>MAN</div>} />
+              <div className='w-full h-full p-2 md:p-5'>{children}</div>
+            </div>
           </div>
         </div>
       </div>

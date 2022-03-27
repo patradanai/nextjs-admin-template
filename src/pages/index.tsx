@@ -1,7 +1,16 @@
-import { Container } from '@components/common'
+import { Container, InputSelectionWithSearch, Button, BreadCrumbList, Loader } from '@components/common'
 
 const Dashboard = () => {
-  return <Container>123123123</Container>
+  return (
+    <Container>
+      <InputSelectionWithSearch />
+
+      <Button name='จ่ายงาน' />
+
+      <BreadCrumbList />
+      <Loader />
+    </Container>
+  )
 }
 
 export default Dashboard
